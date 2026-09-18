@@ -97,6 +97,12 @@ ul { list-style: none; }
   background-color: transparent;
 }
 
+@media (max-width: 768px) {
+  .intro-video-overlay {
+    display: none !important;
+  }
+}
+
 /* ==================== HEADER ==================== */
 .header {
   position: fixed;
