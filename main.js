@@ -7,29 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const introOverlay = document.getElementById('intro-video-overlay');
   const introVideo = document.getElementById('intro-video');
 
-  if (introOverlay && introVideo) {
-    if (window.innerWidth >= 769) {
-      // Disable intro on desktop
-      if (introOverlay.parentNode) {
-        introOverlay.parentNode.removeChild(introOverlay);
-      }
-    } else {
-      // Show intro on every load for mobile
-      introOverlay.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Lock scrolling during intro
-
-      const endIntro = () => {
-        introOverlay.classList.add('fade-out');
-        document.body.style.overflow = ''; // Restore scrolling
-        setTimeout(() => {
-          if (introOverlay.parentNode) {
-            introOverlay.parentNode.removeChild(introOverlay);
-          }
-        }, 800);
-      };
-
-      introVideo.addEventListener('ended', endIntro);
-      introVideo.addEventListener('error', endIntro);
+  if (introOverlay) {
+    if (introOverlay.parentNode) {
+      introOverlay.parentNode.removeChild(introOverlay);
     }
   }
 
